@@ -1,0 +1,56 @@
+﻿<Page
+  x:Class="Sharp_Math.Views.MainMenuDesktop"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:local="using:Sharp_Math.Views"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  mc:Ignorable="d">
+
+  <Grid>
+    <Image
+      Source="/Assets/wood-texture.jpg"
+      Stretch="Fill" />
+    <Image
+      Source="/Assets/Book1.png"
+      Stretch="Fill" />
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="13*" />
+        <RowDefinition Height="72*" />
+        <RowDefinition Height="5*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="14*" />
+        <ColumnDefinition Width="223*" />
+        <ColumnDefinition Width="243*" />
+      </Grid.ColumnDefinitions>
+      <Grid Grid.Row="1" Grid.Column="1">
+        <Grid.RowDefinitions>
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+        </Grid.RowDefinitions>
+        <Viewbox>
+          <HyperlinkButton
+            x:Name="Start"
+            Style="{StaticResource GameButtons}"
+            Click="Start_Click">
+            <TextBlock
+              Text="Start" />
+          </HyperlinkButton>
+        </Viewbox>
+        <Viewbox Grid.Row="1">
+          <HyperlinkButton
+            x:Name="Settings"
+            Style="{StaticResource GameButtons}"
+            Click="Settings_Click">
+            <TextBlock
+              Text="Settings" />
+          </HyperlinkButton>
+        </Viewbox>
+
+      </Grid>
+    </Grid>
+  </Grid>
+</Page>

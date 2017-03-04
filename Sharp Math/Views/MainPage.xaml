@@ -1,0 +1,124 @@
+﻿<Page
+  x:Class="Sharp_Math.MainPage"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:local="using:Sharp_Math"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  mc:Ignorable="d">
+
+  <Grid>
+    <VisualStateManager.VisualStateGroups>
+      <VisualStateGroup x:Name="BasicGroup">
+        <VisualState x:Name="Phone">
+          <VisualState.StateTriggers>
+            <AdaptiveTrigger MinWindowWidth="0" />
+          </VisualState.StateTriggers>
+          <VisualState.Setters>
+            <Setter Target="HamburgerMenu.DisplayMode" Value="Overlay" />
+          </VisualState.Setters>
+        </VisualState>
+        <VisualState x:Name="Desktop">
+          <VisualState.StateTriggers>
+            <AdaptiveTrigger MinWindowWidth="700" />
+          </VisualState.StateTriggers>
+          <VisualState.Setters>
+            <Setter Target="HamburgerMenu.DisplayMode" Value="CompactOverlay" />
+          </VisualState.Setters>
+        </VisualState>
+      </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <RelativePanel Background="Black">
+
+      <Button
+        x:Name="Hamburger"
+        FontFamily="Segoe MDL2 Assets"
+        Content="&#xE700;"
+        Click="Hamburger_Click"
+        Style="{StaticResource BasicButton}" />
+
+
+      <TextBlock
+        x:Name="Test"
+        RelativePanel.AlignHorizontalCenterWithPanel="True"
+        Text="Sharp Math"
+        Style="{StaticResource BasicTextBlock}" />
+
+
+    </RelativePanel>
+
+    <Grid Grid.Row="1">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="0.4*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <SplitView
+        x:Name="HamburgerMenu"
+        Grid.ColumnSpan="2"
+        DisplayMode="CompactOverlay"
+        OpenPaneLength="195">
+        <SplitView.Pane>
+          <StackPanel Background="Black">
+            <ListBox Background="Black" SelectionMode="Extended" SelectionChanged="ListBox_SelectionChanged">
+              <ListBoxItem x:Name="Home">
+                <StackPanel Orientation="Horizontal">
+                  <TextBlock
+                    FontFamily="Segoe MDL2 Assets"
+                    Text="&#xEA8A;"
+                    Style="{StaticResource BasicTextBlock }" />
+                  <TextBlock
+                    Text="Game Menu"
+                    Margin="10,0,0,0"
+                    Style="{StaticResource MenuText}" />
+                </StackPanel>
+              </ListBoxItem>
+              <ListBoxItem x:Name="Setting">
+                <StackPanel Orientation="Horizontal">
+                  <TextBlock
+                    FontFamily="Segoe MDL2 Assets"
+                    Text="&#xE115;"
+                    Style="{StaticResource BasicTextBlock }" />
+                  <TextBlock
+                    Text="Setting"
+                    Margin="10,0,0,0"
+                    Style="{StaticResource MenuText}" />
+                </StackPanel>
+              </ListBoxItem>
+
+            </ListBox>
+
+            <HyperlinkButton
+              Margin="12,0,0,0"
+              x:Name="Change"
+              Click="HyperlinkButton_Click">
+              <StackPanel Orientation="Horizontal">
+                <TextBlock
+                  FontFamily="Segoe MDL2 Assets"
+                  Text="&#xE703;"
+                  Style="{StaticResource BasicTextBlock }" />
+                <TextBlock
+                  Margin="10,0,0,0"
+                  Style="{StaticResource MenuText}">
+                  <Run Text="Go To" />
+                  <Run x:Name="Device" Text="Desktop" />
+                </TextBlock>
+              </StackPanel>
+            </HyperlinkButton>
+
+          </StackPanel>
+        </SplitView.Pane>
+        <SplitView.Content>
+          <Frame x:Name="Board" />
+        </SplitView.Content>
+      </SplitView>
+
+    </Grid>
+
+
+  </Grid>
+</Page>

@@ -47,7 +47,7 @@ namespace Sharp_Math
                 Board.Navigate(typeof(MainMenuDesktop));
                 phone = false;
             }
-            Home.IsSelected = true;
+            Listbox.SelectedIndex = 0;
 
 
 
@@ -82,7 +82,13 @@ namespace Sharp_Math
             }
             else if (Setting.IsSelected)
             {
-                Board.Navigate(typeof(Settings));
+                if (phone)
+                {
+                    Board.Navigate(typeof(Settings));
+                }else
+                {
+                    Board.Navigate(typeof(SettingsDesktop));
+                }
             }
             
         }
@@ -101,7 +107,7 @@ namespace Sharp_Math
                 Board.Navigate(typeof(MainMenu));
             }
             phone = !phone;
-            Home.IsSelected = true;
+            Listbox.SelectedIndex = 0;
         }
     }
 }

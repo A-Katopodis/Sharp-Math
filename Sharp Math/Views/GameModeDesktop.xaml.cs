@@ -27,7 +27,7 @@ namespace Sharp_Math.Views
         DispatcherTimer timer = new DispatcherTimer();
         double count = 4;
         public List<Buttons> randombuttons = new List<Buttons>();
-        public int highScore, currentScore, lvl, lives;
+        public int highScore, currentScore, lvl, lives, TimesRefreshed;
 
         public GameModeDesktop()
         {
@@ -37,7 +37,7 @@ namespace Sharp_Math.Views
 
 
             this.InitializeComponent();
-            lives = 3;
+            lives = 1;
             Lives.Text = lives.ToString();
             RightProgress.Maximum = count;
             RightProgress.Value = count;
@@ -55,9 +55,38 @@ namespace Sharp_Math.Views
 
         public void Refresh()
         {
+            TimesRefreshed++;
 
-            Timer.Foreground = new SolidColorBrush(Windows.UI.Colors.Green);
-            count = 2;
+            if (count >= 1)
+            {
+                currentScore += 13;
+            }
+            else if (count >= 1.5)
+            {
+                currentScore += 15;
+            }
+            else
+            {
+                currentScore += 10;
+            }
+
+            if (count > 2)
+            {
+
+                count -= 1;
+            }
+            else
+            {
+                count = 2;
+            }
+            if (TimesRefreshed == 9)
+            {
+                lvl += 10;
+            }
+            else if (TimesRefreshed == 19)
+            {
+                lvl += 10;
+            }
             currentScore += 10;
             updateData(lvl);
             timer.Interval = new TimeSpan(0, 0, 0, 0, 100);

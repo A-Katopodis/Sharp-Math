@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="57250731-ad50-4e81-b435-690ff4f8581b" Publisher="CN=Kabalog" Version="1.0.0.0" />
+  <Identity Name="57250731-ad50-4e81-b435-690ff4f8581b" Publisher="CN=A.Katopodis" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="57250731-ad50-4e81-b435-690ff4f8581b" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Sharp Math</DisplayName>
-    <PublisherDisplayName>Antonios Katopodis</PublisherDisplayName>
+    <PublisherDisplayName>A. Katopodis</PublisherDisplayName>
     <Logo>assets\Store\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>

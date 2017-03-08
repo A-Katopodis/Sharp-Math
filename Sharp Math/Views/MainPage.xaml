@@ -64,7 +64,9 @@
         OpenPaneLength="195">
         <SplitView.Pane>
           <StackPanel Background="Black">
-            <ListBox Background="Black" SelectionMode="Extended" SelectionChanged="ListBox_SelectionChanged">
+            <ListBox 
+                x:Name="Listbox"
+                Background="Black" SelectionMode="Extended" SelectionChanged="ListBox_SelectionChanged">
               <ListBoxItem x:Name="Home">
                 <StackPanel Orientation="Horizontal">
                   <TextBlock

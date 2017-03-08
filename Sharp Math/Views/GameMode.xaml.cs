@@ -31,9 +31,9 @@ namespace Sharp_Math.Views
 
         Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
         DispatcherTimer timer = new DispatcherTimer();
-        double count = 4;
+        double count = 6;
         public List<Buttons> randombuttons = new List<Buttons>();
-        public int highScore, currentScore, lvl, lives;
+        public int  TimesRefreshed,highScore, currentScore, lvl, lives;
 
         public GameMode()
         { 
@@ -42,8 +42,9 @@ namespace Sharp_Math.Views
             highScore = 10;
             lvl = 10;
             currentScore = 0;
+            TimesRefreshed = 0;
             this.InitializeComponent();
-            lives = 3;
+            lives = 1;
             Lives.Text =lives.ToString();
             CurrentScore.Text=currentScore.ToString();
             RightProgress.Value = count;
@@ -63,21 +64,44 @@ namespace Sharp_Math.Views
 
         public void Refresh()
         {
+            TimesRefreshed++;
+
             if (count >= 1)
             {
-                currentScore += 12;
-            }else
+                currentScore += 13;
+            }else if (count>=1.5)
+            {
+                currentScore += 15;
+            }
+            else
             {
                 currentScore += 10;
             }
-            count = 2;
-            
+
+            if (count > 2)
+            {
+                
+                count -= 1;
+            }else
+            {
+                count = 2;
+            }
+            if (TimesRefreshed == 9)
+            {
+                lvl+=10;
+            }else if (TimesRefreshed == 19)
+            {
+                lvl+=10;
+            }
             updateData(lvl);
             timer.Interval = new TimeSpan(0, 0, 0, 0, 100);
             RightProgress.Value = count;
             LeftProgress.Value = count;
+            RightProgress.Maximum = count;
+            LeftProgress.Maximum = count;
             RightProgress.Foreground = new SolidColorBrush(Colors.Black);
             LeftProgress.Foreground = new SolidColorBrush(Colors.Black);
+            
             timer.Start();
         }
 
@@ -110,10 +134,12 @@ namespace Sharp_Math.Views
             timer.Stop();
             if (randombuttons[1].result == randombuttons[0].result)
             {
+                one.Foreground = new SolidColorBrush(Colors.Green);
                 Refresh();
             }
             else
             {
+                one.Foreground = new SolidColorBrush(Colors.Red);
                 LoseGame();
             }
         }
@@ -123,10 +149,12 @@ namespace Sharp_Math.Views
             timer.Stop();
             if (randombuttons[2].result == randombuttons[0].result)
             {
+                two.Foreground = new SolidColorBrush(Colors.Green);
                 Refresh();
             }
             else
             {
+                two.Foreground = new SolidColorBrush(Colors.Red);
                 LoseGame();
             }
         }
@@ -136,10 +164,12 @@ namespace Sharp_Math.Views
             timer.Stop();
             if (randombuttons[3].result == randombuttons[0].result)
             {
+                three.Foreground = new SolidColorBrush(Colors.Green);
                 Refresh();
             }
             else
             {
+                three.Foreground = new SolidColorBrush(Colors.Red);
                 LoseGame();
             }
         }
@@ -149,10 +179,12 @@ namespace Sharp_Math.Views
             timer.Stop();
             if (randombuttons[4].result == randombuttons[0].result)
             {
+                four.Foreground = new SolidColorBrush(Colors.Green);
                 Refresh();
             }
             else
             {
+                four.Foreground = new SolidColorBrush(Colors.Red);
                 LoseGame();
             }
         }

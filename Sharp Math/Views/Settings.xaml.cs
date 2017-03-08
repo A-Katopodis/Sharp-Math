@@ -35,36 +35,34 @@ namespace Sharp_Math.Views
         private void Easy_Click(object sender, RoutedEventArgs e)
         {
             setOpacity(10);
-            NewDifficutly = 10;
+            localSettings.Values["Difficulty"] = 10;
+
         }
 
         private void Normal_Click(object sender, RoutedEventArgs e)
         {
             setOpacity(20);
-            NewDifficutly = 20;
+            localSettings.Values["Difficulty"] = 20;
+
         }
 
         private void Hard_Click(object sender, RoutedEventArgs e)
         {
             setOpacity(30);
-            NewDifficutly = 30;
+            localSettings.Values["Difficulty"] = 30;
 
         }
 
         private void MainMenu_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainMenuDesktop));
+            Frame.Navigate(typeof(MainMenu));
         }
 
         private void Play_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(GameModeDesktop));
+            Frame.Navigate(typeof(GameMode));
         }
 
-        private void Save_Click(object sender, RoutedEventArgs e)
-        {
-            localSettings.Values["Difficulty"] = NewDifficutly;
-        }
 
 
         public void setOpacity(int diff)

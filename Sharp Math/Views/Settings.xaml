@@ -6,125 +6,124 @@
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   mc:Ignorable="d">
-  <Grid>
-    <Image
+    <Grid>
+        <Image
       Source="../Assets/wood-texture.jpg"
       Stretch="Fill" />
-    <Image Grid.Column="1"
+        <Image Grid.Column="1"
            Source="../Assets/PhoneBook1.png"
            Stretch="Fill" />
-    <Grid>
-      <Grid.RowDefinitions>
-        <RowDefinition Height="85*" />
-        <RowDefinition Height="506*" />
-        <RowDefinition Height="49*" />
-      </Grid.RowDefinitions>
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="6*" />
-        <ColumnDefinition Width="335*" />
-        <ColumnDefinition Width="19*" />
-      </Grid.ColumnDefinitions>
-      <Grid Grid.Row="1" Grid.Column="1">
-        <Grid.RowDefinitions>
-          <RowDefinition Height="365*" />
-          <RowDefinition Height="141*" />
-        </Grid.RowDefinitions>
         <Grid>
-          <Grid.RowDefinitions>
-            <RowDefinition Height="66*" />
-            <RowDefinition Height="299*" />
-          </Grid.RowDefinitions>
-          <Viewbox>
-            <TextBlock Style="{StaticResource MainMenuText}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="85*" />
+                <RowDefinition Height="506*" />
+                <RowDefinition Height="49*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*" />
+                <ColumnDefinition Width="335*" />
+                <ColumnDefinition Width="19*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="365*" />
+                    <RowDefinition Height="141*" />
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="66*" />
+                        <RowDefinition Height="299*" />
+                    </Grid.RowDefinitions>
+                    <Viewbox>
+                        <TextBlock Style="{StaticResource MainMenuText}">
               <Underline>
                 <Run Text="Difficulty" />
               </Underline>
-            </TextBlock>
-          </Viewbox>
-          <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-              <RowDefinition />
-              <RowDefinition />
-              <RowDefinition />
-            </Grid.RowDefinitions>
-            <Viewbox>
-              <HyperlinkButton
+                        </TextBlock>
+                    </Viewbox>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Viewbox>
+                            <HyperlinkButton
                 x:Name="Easy"
                 Click="Easy_Click"
                 Style="{StaticResource GameButtons}">
-                <TextBlock
+                                <TextBlock
 
                   Text="Easy" />
-              </HyperlinkButton>
-            </Viewbox>
-            <Viewbox Grid.Row="1">
-              <HyperlinkButton
+                            </HyperlinkButton>
+                        </Viewbox>
+                        <Viewbox Grid.Row="1">
+                            <HyperlinkButton
                 x:Name="Normal"
                 Click="Normal_Click"
                 Style="{StaticResource GameButtons}">
-                <TextBlock
+                                <TextBlock
                   Text="Normal" />
-              </HyperlinkButton>
-            </Viewbox>
-            <Viewbox Grid.Column="3" Grid.Row="5">
-              <HyperlinkButton
+                            </HyperlinkButton>
+                        </Viewbox>
+                        <Viewbox Grid.Column="3" Grid.Row="5">
+                            <HyperlinkButton
                 x:Name="Hard"
                 Click="Hard_Click"
                 Style="{StaticResource GameButtons}">
-                <TextBlock
+                                <TextBlock
                   Text="Hard" />
-              </HyperlinkButton>
-            </Viewbox>
-          </Grid>
-        </Grid>
-        <Grid Grid.Row="1">
-          <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition Height="34*" />
-            <RowDefinition Height="35*" />
-          </Grid.RowDefinitions>
-          <Rectangle
+                            </HyperlinkButton>
+                        </Viewbox>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="34*" />
+
+                    </Grid.RowDefinitions>
+                    <Rectangle
             Fill="Black"
             VerticalAlignment="Stretch"
             HorizontalAlignment="Stretch" />
-          <Viewbox Grid.Row="1">
-            <HyperlinkButton
-              x:Name="Play"
-              Click="Play_Click"
-
-              Style="{StaticResource GameButtons}">
-              <TextBlock
-                Text="Save" />
-            </HyperlinkButton>
-          </Viewbox>
-          <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-              <ColumnDefinition />
-              <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <Viewbox>
-              <HyperlinkButton
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="56*" />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="55*"/>
+                        </Grid.ColumnDefinitions>
+                        <Viewbox >
+                            <HyperlinkButton
                 x:Name="Save"
-                Click="Save_Click"
+                Click="Play_Click"
                 Style="{StaticResource GameButtons}">
-                <TextBlock
+                                <TextBlock
                   Text="Play" />
-              </HyperlinkButton>
-            </Viewbox>
-            <Viewbox Grid.Column="1">
-              <HyperlinkButton
+                            </HyperlinkButton>
+                        </Viewbox>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="17*"/>
+                                <RowDefinition Height="31*"/>
+                                <RowDefinition Height="21*"/>
+                            </Grid.RowDefinitions>
+                            <Rectangle Fill="Black" Grid.Row="1"/>
+                        </Grid>
+                        <Viewbox Grid.Column="2" >
+                            <HyperlinkButton
                 x:Name="MainMenu"
                 Click="MainMenu_Click"
                 Style="{StaticResource GameButtons}">
-                <TextBlock
+                                <TextBlock
                   Text="Back" />
-              </HyperlinkButton>
-            </Viewbox>
-          </Grid>
+                            </HyperlinkButton>
+                        </Viewbox>
+                    </Grid>
+                </Grid>
+            </Grid>
         </Grid>
-      </Grid>
     </Grid>
-  </Grid>
 
 </Page>
 
